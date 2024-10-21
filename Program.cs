@@ -1,5 +1,5 @@
-﻿using System;
-using System.IO;
+﻿//using System;
+//using System.IO;
 using System.Text.RegularExpressions;
 
 Console.Write("Enter your name: ");
@@ -41,12 +41,8 @@ using (StreamReader reader = new StreamReader(fileName))
         Console.WriteLine(line);
     }
 }
-
-// Prompt the user to enter a directory path
 Console.Write("\nEnter a directory path to list files: ");
 string directoryPath = Console.ReadLine().Trim();
-
-// List all files within the specified directory
 if (Directory.Exists(directoryPath))
 {
     string[] files = Directory.GetFiles(directoryPath);
@@ -60,8 +56,6 @@ else
 {
     Console.WriteLine($"Directory '{directoryPath}' does not exist.");
 }
-
-// Prompt the user to input a string and format it to title case
 Console.Write("\nEnter a string to format to title case: ");
 string inputString = Console.ReadLine().Trim();
 string titleCaseString = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(inputString.ToLower());
